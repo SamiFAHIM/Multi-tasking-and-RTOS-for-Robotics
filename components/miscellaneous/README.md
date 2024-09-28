@@ -1,0 +1,5 @@
+# Miscellaneous component
+
+## Template
+
+## Functions

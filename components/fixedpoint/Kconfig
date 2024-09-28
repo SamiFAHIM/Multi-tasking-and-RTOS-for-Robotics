@@ -1,0 +1,17 @@
+menu "FixedPoint configuration"
+    config FIXEDPOINT_FLOAT_SUPPORTED
+        bool "Enable float support : aka operation with float"
+        default 1
+        help
+            All classic operations (+ - * / and (cast)) with double type
+            Prefer double support over float support when you want your application to run without FPU,
+            because double is done using software
+
+    config FIXEDPOINT_DOUBLE_SUPPORTED
+        bool "Enable double support : aka operation with double"
+        default 0
+        help
+            All classic operations (+ - * / and (cast)) with double type
+            Prefer double support over float support when you want your application to run without FPU,
+            because double is done using software
+endmenu

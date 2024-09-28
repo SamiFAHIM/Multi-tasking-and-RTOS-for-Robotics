@@ -1,1 +1,3 @@
-# Multi-tasking-and-RTOS-for-Robotics
+# ESP-PAMI
+
+Code for PAMI developed on ESP32

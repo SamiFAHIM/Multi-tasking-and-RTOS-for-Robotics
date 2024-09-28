@@ -1,0 +1,33 @@
+menu "Miscellaneous Configuration"
+    choice MISC_HEX_BUFF_COLOR_CHOICE
+        prompt "Color for ISR safe printf function in console"
+        depends on LOG_COLORS
+        default MISC_LOG_COLOR_BLUE
+        help
+            Define the color of the ISR safe printing functions
+        config MISC_LOG_COLOR_BLACK
+            bool "Black"
+        config MISC_LOG_COLOR_RED
+            bool "Red"
+        config MISC_LOG_COLOR_GREEN
+            bool "Green"
+        config MISC_LOG_COLOR_BROWN
+            bool "Brown"
+        config MISC_LOG_COLOR_BLUE
+            bool "Blue"
+        config MISC_LOG_COLOR_PURPLE
+            bool "Purple"
+        config MISC_LOG_COLOR_CYAN
+            bool "Cyan"
+    endchoice
+
+    config MISC_HEX_BUFF_COLOR
+        string
+        default "30" if MISC_LOG_COLOR_BLACK
+        default "31" if MISC_LOG_COLOR_RED
+        default "32" if MISC_LOG_COLOR_GREEN
+        default "33" if MISC_LOG_COLOR_BROWN
+        default "34" if MISC_LOG_COLOR_BLUE
+        default "35" if MISC_LOG_COLOR_PURPLE
+        default "36" if MISC_LOG_COLOR_CYAN
+endmenu

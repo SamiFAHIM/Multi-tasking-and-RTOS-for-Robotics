@@ -1,0 +1,33 @@
+menu "WTask Configuration"
+    config WORKQUEUE_SUPPORT
+        bool "Support WorkQueue"
+        default y
+        depends on RTASK_SUPPORT
+        help
+            Enable this option if you want to use WorkQueue object (WorkQueue depends on RTask).
+            Disable this option to save memory.
+
+    config RTASK_SUPPORT
+        bool "Support RTask"
+        default y
+        depends on NTASK_SUPPORT
+        help
+            Enable this option if you want to use RTask object (RTask depends on NTask).
+            Disable this option to save memory.
+
+    config NTASK_SUPPORT
+        bool "Support NTask"
+        default y
+        depends on TASK_SUPPORT
+        help
+            Enable this option if you want to use NTask object (NTask depends on Task).
+            Disable this option to save memory.
+    
+    config TASK_SUPPORT
+        bool "Support Task"
+        default y
+        help
+            Enable this option if you want to use Task object (NTask depends on Task).
+            Disable this option to save memory.
+    
+endmenu
